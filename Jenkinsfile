@@ -48,7 +48,7 @@ pipeline {
         }
         stage('Build with Gradle') {
             steps {
-                sh './gradlew shadowJar'
+                sh './gradlew jar'
             }
         }
         stage('Publish to Nexus') {
