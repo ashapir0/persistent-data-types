@@ -53,7 +53,7 @@ pipeline {
         }
         stage('Publish to Nexus') {
             steps {
-                nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: "build/libs/persistent-data-types-${VERSION}-all.jar"]], mavenCoordinate: [artifactId: 'persistent-data-types', groupId: 'com.manya', packaging: 'jar', version: "${VERSION}"]]]
+                nexusPublisher nexusInstanceId: 'nexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: "build/libs/persistent-data-types-${VERSION}.jar"]], mavenCoordinate: [artifactId: 'persistent-data-types', groupId: 'com.manya', packaging: 'jar', version: "${VERSION}"]]]
             }
         }
         stage('Archive Artifacts') {
