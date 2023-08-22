@@ -37,27 +37,3 @@ tasks {
         filteringCharset = Charsets.UTF_8.name() // We want UTF-8 for everything
     }
 }
-
-
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = "com.manya"
-            artifactId = "persistent-data-types"
-            version = version
-
-            from(components["java"])
-        }
-    }
-    repositories {
-        maven {
-            name = "persistent-data-types" //  optional target repository name
-            url = uri("https://repo.decalium.ru/releases/")
-            credentials {
-                username = System.getenv("REPOSILITE_USER")
-                password = System.getenv("REPOSILITE_TOKEN")
-            }
-        }
-    }
-}
-
